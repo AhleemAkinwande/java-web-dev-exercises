@@ -44,16 +44,30 @@ public class Menu {
     public void remove() {
         System.out.println("Select number corresponding to the menu item you would like to remove");
         this.showAll();
-        int indexToDelete = input.nextInt();
+        int indexToDelete = (input.nextInt() - 1);
         input.close();
 
         this.items.remove(indexToDelete);
     }
 
+
+    public void simpleShowItem(int index) {
+        MenuItem itemToShow = this.items.get(index);
+        System.out.println(itemToShow.getName() + ": " + itemToShow.getPrice());
+    }
+
+    public void showItem() {
+        Scanner input = new Scanner(System.in);
+        System.out.println(String.format("Select a number from %s to %s corresponding to the menu item you would like to show:", 1, (this.items.size())));
+        int indexToShow = (input.nextInt() - 1);
+        input.close();
+        this.simpleShowItem(indexToShow);
+    }
+
     public void showAll() {
         for (int i = 0; i < this.items.size(); i++) {
             MenuItem theItem = this.items.get(i);
-            System.out.println(String.format("%s) %s: %s", i, theItem.getName(), theItem.getPrice()));
+            System.out.println(String.format("%s) %s: %s", i + 1, theItem.getName(), theItem.getPrice()));
         }
     }
 

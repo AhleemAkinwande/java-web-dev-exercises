@@ -17,11 +17,14 @@ public class Restaurant {
 
         Menu todaysMenu = new Menu(myMenu);
 
-        todaysMenu.remove();
-        todaysMenu.showAll();
-       // todaysMenu.addItem();
+        MenuItem pizza = new MenuItem("Pizza", 2.01, "Basic slice of cheese 'za", "Dessert");
+
+        //todaysMenu.remove();
+//        System.out.println();
+        todaysMenu.add(pizza);
         //todaysMenu.showAll();
-        todaysMenu.showLastUpdated();
+        todaysMenu.showItem();
+        //todaysMenu.showLastUpdated();
 
 
     }
