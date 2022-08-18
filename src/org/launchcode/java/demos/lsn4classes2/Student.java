@@ -69,7 +69,7 @@ public class Student {
         this.studentId = studentId;
     }
 
-    public void setGpa(double gpa) {
+    private void setGpa(double gpa) {
         this.gpa = gpa;
     }
 
